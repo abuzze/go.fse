@@ -16,6 +16,7 @@ You need to rename config.sample.json to config.json and edit your userkey and t
 desired aircraft type. You will find you userkey on the (FSEconomy Website)[https://server.fseconomy.net/] via
 Home > Datafeeds in the Access Key field. It looks like this 3EF7A5E5746994GF.
 The aircraft model should be the same like in the "Search Airport" dropdown menu "Airports that have this aircraft".
+Set terminal to cmd for Windows or to bash, if you like colors in your terminal.
 
 ## Airport Data
 
