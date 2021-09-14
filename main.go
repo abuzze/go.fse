@@ -183,6 +183,10 @@ func getAssignment(AircraftItem AircraftItems) IcaoJobsFrom {
 			}
 		}
 	}
+	// remove a leading -
+	if Locationstr[0] == '-' {
+		Locationstr = Locationstr[1:]
+	}
 	// get possible assignments on all airports, that have our aircraft type
 	Assignmentresponse, err := http.Get("https://server.fseconomy.net/data?userkey=" + userkey + "&format=xml&query=icao&search=jobsfrom&icaos=" + Locationstr)
 	if err != nil {
