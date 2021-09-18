@@ -93,7 +93,9 @@ func pauseOutput(){
 func readConfig() {
   configfile, err := ioutil.ReadFile("./config.json")
   if err != nil {
-    fmt.Print(err)
+    fmt.Println(err)
+    fmt.Println("Please put the config.json in the same folder as the binary")
+    os.Exit(1)
   }
   json.Unmarshal(configfile, &config)
   config.Aircrafttype = strings.Replace(config.Aircrafttype, " ", "%20", -1)
@@ -132,7 +134,9 @@ func distanceInKmBetweenEarthCoordinates(lat1 float64, lon1 float64, lat2 float6
 func readAirportData() []byte {
   data, err := ioutil.ReadFile("./airport-codes_json.json")
   if err != nil {
-    fmt.Print(err)
+    fmt.Println(err)
+    fmt.Println("Please put the airport-codes_json.json in the same folder as the binary")
+    os.Exit(1)
   }
   return data
 }

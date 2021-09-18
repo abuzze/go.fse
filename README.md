@@ -8,6 +8,7 @@ a specific aircraft.
 ## Install
 
 Copy the binary, the config.sample.json and the airport-codes_json.json to the same folder.
+go.fse is the MacOS version. go.fse.exe is for Windows.
 Run the binary in a terminal like iTerm (MacOS) or cmd (Windows)
 
 ## Config
