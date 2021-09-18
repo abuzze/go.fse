@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"encoding/json"
 	"encoding/xml"
 	"fmt"
@@ -82,6 +83,13 @@ func main() {
 	readConfig()
 	data = readAirportData()
 	printTopJobs()
+	pauseOutput()
+
+}
+
+func pauseOutput(){
+	fmt.Print("Press 'Enter' to continue...")
+  bufio.NewReader(os.Stdin).ReadBytes('\n')
 }
 
 func readConfig() {
