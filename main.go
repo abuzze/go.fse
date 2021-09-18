@@ -201,6 +201,7 @@ func getAssignment(AircraftItem AircraftItems) IcaoJobsFrom {
     log.Fatal(err)
   }
   xml.Unmarshal(responseData, &IcaoJobsFromList)
+
   return IcaoJobsFromList
 }
 
@@ -219,7 +220,15 @@ func printTopJobs() {
   var IcaoJobsFromList IcaoJobsFrom = getAssignment(Aircrafts)
   var myList []Job
   var foundJobs = 0
+  var maxJobs = len(IcaoJobsFromList.Assignment)
+
   for i := 0; i < len(IcaoJobsFromList.Assignment); i++ {
+    if config.Terminal == "bash" {
+      fmt.Printf("\rParsing \033[31m%d\033[0m of \033[31m%v\033[0m Jobs", i,maxJobs)
+    } else {
+      fmt.Printf("\rParsing %d of %v Jobs", i,maxJobs)
+    }
+    fmt.Printf("\rParsing \033[31m%d of %v\033[0m Jobs", i,maxJobs)
     if IcaoJobsFromList.Assignment[i].AircraftId != "0" {
       for j := 0; j < len(Aircrafts.Aircraft); j++ {
         // Only add Planes, that we searched
@@ -242,6 +251,7 @@ func printTopJobs() {
       }
     }
   }
+  fmt.Println("")
   sort.SliceStable(myList, func(i, j int) bool {
     return myList[i].Pay > myList[j].Pay
   })
