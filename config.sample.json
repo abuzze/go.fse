@@ -1,5 +1,8 @@
 {
   "userkey":"insertAccessKeyhere",
   "aircrafttype":"Airbus A320 (MSFS)",
-  "terminal":"cmd"
+  "terminal":"cmd",
+  "from":["US","UK","DE","IT"],
+  "to":["all"],
+  "searchlimit":10
 }
