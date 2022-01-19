@@ -40,3 +40,8 @@ You can limit the number of jobs shown be setting the searchlimit.
 
 The Airport data was downloaded from (datahub.io)[https://datahub.io/core/airport-codes] You can update the file, if you keep
 the name.
+
+
+## Licence
+
+Free to use.
